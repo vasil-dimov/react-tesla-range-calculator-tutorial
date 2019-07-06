@@ -12,13 +12,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header></Header>
-        <TeslaBattery></TeslaBattery>
-        <TeslaCar></TeslaCar>
-        <TeslaClimate></TeslaClimate>
-        <TeslaCounter></TeslaCounter>
-        <TeslaNotice></TeslaNotice>
-        <TeslaWheels></TeslaWheels>
+        <Header />
+        <TeslaBattery />
+        <TeslaCar />
+        <TeslaClimate />
+        <TeslaCounter />
+        <TeslaNotice />
+        <TeslaWheels />
       </div>
     );
   }
