@@ -11,10 +11,9 @@ import TeslaBattery from "./containers/TeslaBattery";
 class App extends Component {
   render() {
     return (
-      <div>
-        <h2>Let's get started</h2>
-        <TeslaBattery></TeslaBattery>
+      <div className="App">
         <Header></Header>
+        <TeslaBattery></TeslaBattery>
         <TeslaCar></TeslaCar>
         <TeslaClimate></TeslaClimate>
         <TeslaCounter></TeslaCounter>
