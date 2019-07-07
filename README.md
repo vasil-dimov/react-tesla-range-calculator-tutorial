@@ -1,4 +1,4 @@
-Implement this [tutorial](https://www.freecodecamp.org/news/building-teslas-battery-range-calculator-with-react-part-1-2cb7abd8c1ee/) like a exercise.
+Implemention of this [tutorial](https://www.freecodecamp.org/news/building-teslas-battery-range-calculator-with-react-part-1-2cb7abd8c1ee/) like a exercise.
 ### Create React App Doc
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
