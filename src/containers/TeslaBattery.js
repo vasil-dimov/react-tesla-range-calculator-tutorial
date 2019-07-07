@@ -5,6 +5,7 @@ import TeslaCar from "../components/TeslaCar/TeslaCar";
 import TeslaStats from "../components/TeslaStats/TeslaStats";
 import { getModelData } from "../services/BatteryService";
 import TeslaCounter from "../components/TeslaCounter/TeslaCounter";
+import TeslaClimate from "../components/TeslaClimate/TeslaClimate";
 
 class TeslaBattery extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class TeslaBattery extends Component {
     this.increment = this.increment.bind(this);
     this.decrement = this.decrement.bind(this);
     this.updateCounterState = this.updateCounterState.bind(this);
+    this.handleChangeClimate = this.handleChangeClimate.bind(this);
 
     this.state = {
       carstats: [],
@@ -106,6 +108,15 @@ class TeslaBattery extends Component {
     }
   }
 
+  // handle aircon & heating click event handler
+  handleChangeClimate() {
+    const config = { ...this.state.config };
+    config["climate"] = !this.state.config.climate;
+    this.setState({ config }, () => {
+      this.statsUpdate();
+    });
+  }
+
   render() {
     const { config, carstats } = this.state;
     return (
@@ -115,17 +126,22 @@ class TeslaBattery extends Component {
         <TeslaStats carstats={carstats} />
         <div className="tesla-controls cf">
           <TeslaCounter
-              currentValue={this.state.config.speed}
-              initValues={this.props.counterDefaultVal.speed}
-              increment={this.increment}
-              decrement={this.decrement}
+            currentValue={this.state.config.speed}
+            initValues={this.props.counterDefaultVal.speed}
+            increment={this.increment}
+            decrement={this.decrement}
           />
           <div className="tesla-climate-container cf">
             <TeslaCounter
-                currentValue={this.state.config.temperature}
-                initValues={this.props.counterDefaultVal.temperature}
-                increment={this.increment}
-                decrement={this.decrement}
+              currentValue={this.state.config.temperature}
+              initValues={this.props.counterDefaultVal.temperature}
+              increment={this.increment}
+              decrement={this.decrement}
+            />
+            <TeslaClimate
+              value={this.state.config.climate}
+              limit={this.state.config.temperature > 10}
+              handleChangeClimate={this.handleChangeClimate}
             />
           </div>
         </div>
