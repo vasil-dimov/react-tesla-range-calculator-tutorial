@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
-import TeslaClimate from "./components/TeslaClimate/TeslaClimate";
-import TeslaCounter from "./components/TeslaCounter/TeslaCounter";
-import TeslaWheels from "./components/TeslaWheels/TeslaWheels";
 import TeslaBattery from "./containers/TeslaBattery";
 
 const counterDefaultVal = {
